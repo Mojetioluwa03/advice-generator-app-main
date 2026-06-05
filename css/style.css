@@ -1,0 +1,140 @@
+:root {
+  color-scheme: dark;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 800;
+  background: hsl(218, 23%, 16%);
+  color: hsl(193, 38%, 86%);
+  --text-primary: hsl(193, 38%, 86%);
+  --text-secondary: hsl(217, 19%, 38%);
+  --surface: hsl(217, 19%, 24%);
+  --accent: hsl(150, 100%, 66%);
+  --accent-soft: hsla(150, 100%, 66%, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 34%),
+              hsl(218, 23%, 16%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 6rem 1.5rem 2rem;
+  text-align: center;
+  align-items: center
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+main {
+  width: min(100%, 30rem);
+}
+
+.advice-card {
+  position: relative;
+  background: var(--surface);
+  border-radius: 1.75rem;
+  padding: 2.5rem 1.75rem 3.5rem;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+}
+
+.advice-card__id {
+  margin: 0 0 1.5rem;
+  letter-spacing: 0.35em;
+  color: var(--accent);
+  font-size: 0.875rem;
+}
+
+.advice-card__text {
+  margin: 0;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  line-height: 1.2;
+  color: var(--text-primary);
+}
+
+.advice-card__text span {
+  display: block;
+}
+
+.divider {
+  margin: 2.5rem auto 0;
+  width: 100%;
+  max-width: 30rem;
+}
+
+.divider__img {
+  width: 100%;
+  height: auto;
+}
+
+.divider__img--desktop {
+  display: none;
+}
+
+.dice-button {
+  position: absolute;
+  left: 50%;
+  bottom: -2rem;
+  transform: translateX(-50%);
+  border: none;
+  width: 4.5rem;
+  height: 4.5rem;
+  border-radius: 50%;
+  background: linear-gradient(180deg, hsl(150, 100%, 66%), hsl(150, 100%, 50%));
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 20px 30px rgba(46, 189, 166, 0.35);
+}
+
+.dice-button:hover,
+.dice-button:focus-visible {
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 24px 34px rgba(46, 189, 166, 0.45);
+}
+
+.dice-button img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.attribution {
+  margin-top: 5rem;
+  font-size: 0.75rem;
+  color: hsl(193, 38%, 86%);
+}
+
+.attribution a {
+  color: hsl(193, 38%, 86%);
+  text-decoration: none;
+}
+
+@media (min-width: 640px) {
+  body {
+    padding: 2rem;
+  }
+
+  .advice-card {
+    padding: 3rem 2.5rem 4rem;
+  }
+
+  .divider__img--desktop {
+    display: block;
+  }
+
+  .divider__img--mobile {
+    display: none;
+  }
+}
